@@ -1,3 +1,20 @@
+###################
+#
+# Bachelor Thesis
+#
+# Title: BioShapes
+#
+# Candidate: Adrian Cotoc
+# Faculty of Mathematics and Informatics, UVT
+#
+# Coordinator:
+#   Prof. Daniela Zaharie
+#   Dr. med. Leonard Mada (Syonic SRL)
+#
+# in collaboration with Syonic SRL
+#
+# GitHub: https://github.com/Adi131313/BioShapes
+
 ui = fluidPage(
   #"Bioshapes",
   shinyjs::useShinyjs(),
@@ -7,7 +24,7 @@ ui = fluidPage(
       fluidRow(
         column(2,
                tags$div(id = "graphicDescription",
-                      style = "position: absolute; top: 150px; left: 10px;",
+                      style = "padding-top: 50px;padding-bottom: 50px; top: 150px; left: 10px;",
                       htmlOutput("txtDescription"))
         ),
       column(10,
@@ -30,19 +47,10 @@ ui = fluidPage(
       ),
       fluidRow(
         column(4,
-               sliderInput(inputId = "NrCells", label = "Number of Cells",
-                           value = 8, min = 4, max = 20, step = 2))
+               sliderInput(inputId = "NrCells", label = textOutput("textslider"),
+                           value = 8, min = 4, max = 22, step = 2))
         )
     )
   )
 )
 )
-
-# output$downloadImage <- downloadHandler(
-#   filename = "Modified_image.jpeg",
-#   contentType = "image/jpeg",
-#   content = function(file) {
-#     ## copy the file from the updated image location to the final download location
-#     file.copy(updatedImageLoc(), file)
-#   }
-# )
